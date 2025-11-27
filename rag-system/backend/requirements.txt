@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+python-dotenv
+pydantic
+pdfminer.six
+chromadb
+sqlalchemy
+psycopg2-binary
+InstructorEmbedding
+python-multipart
