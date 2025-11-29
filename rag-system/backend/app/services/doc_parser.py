@@ -2,14 +2,17 @@
 from pdfminer.high_level import extract_text
 from typing import Optional
 import os
+from termcolor import colored
 
 def extract_text_from_pdf(path: str) -> str:
     """
     Extracts text from a PDF using pdfminer.six.
     Returns empty string on error.
     """
+    print(colored("Inside doc_parser", "red"))
     try:
         text = extract_text(path)
+        print("Extracted text :" + text)
         return text or ""
     except Exception as e:
         # log the error in production
