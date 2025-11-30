@@ -9,7 +9,6 @@ def extract_text_from_pdf(path: str) -> str:
     Extracts text from a PDF using pdfminer.six.
     Returns empty string on error.
     """
-    print(colored("Inside doc_parser", "red"))
     try:
         text = extract_text(path)
         print("Extracted text :" + text)
