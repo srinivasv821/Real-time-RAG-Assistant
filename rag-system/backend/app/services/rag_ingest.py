@@ -1,7 +1,7 @@
 from typing import List
 from app.services.chunker import split_into_chunks
 from app.services.embedding_service import embed_text
-from app.services.chroma_service import get_or_create_collection
+from app.services.chroma_service import get_collection
 from app.db.session import SessionLocal
 from app.db.models.document import Document
 
@@ -19,7 +19,7 @@ def process_document(doc_id: int, text: str):
         vectors = [embed_text(chunk) for chunk in chunks]
 
         # 3) Store in ChromaDB
-        collection = get_or_create_collection("rag_docs")
+        collection = get_collection("rag_docs")
 
         ids = [f"{doc_id}_{i}" for i in range(len(chunks))]
 
