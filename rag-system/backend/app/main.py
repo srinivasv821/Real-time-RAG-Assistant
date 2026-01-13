@@ -3,6 +3,9 @@ from app.api.health import router as health_router
 from app.api.routes.upload import router as upload_router
 from app.db.session import engine, Base
 from app.api.routes import query
+from dotenv import load_dotenv
+
+load_dotenv()
 
 app = FastAPI(title="RAG System",
     description="Real-time RAG system with Private + Web-Assisted modes",
